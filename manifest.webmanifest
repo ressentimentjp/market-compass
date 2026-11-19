@@ -1,0 +1,16 @@
+{
+  "name": "Market Compass",
+  "short_name": "Market Compass",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b101a",
+  "theme_color": "#0b101a",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
