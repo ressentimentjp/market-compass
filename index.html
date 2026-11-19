@@ -40,18 +40,18 @@
   </aside>
   <main class="main">
     <header class="topbar">
-      <div><div class="eyebrow">PRODUCT INTELLIGENCE / RESEARCH WORKSPACE</div><h1 id="page-title">市場調査ダッシュボード</h1></div>
+      <div><div class="eyebrow">MARKET COMPASS</div><h1 id="page-title">市場調査ダッシュボード</h1></div>
       <div class="top-right"><div class="net-status" id="net-status"><span class="dot"></span> ブラウザ版 / 公開API</div><button class="small-btn" id="export-json" title="選択中プロジェクトをJSONで保存">↓ データ保存</button></div>
     </header>
     <section class="query-panel">
-      <div class="query-header"><span class="step-index">01 / IDEA INPUT</span><span class="muted mini">市場の仮説を、出典のある調査へ</span></div>
+      <div class="query-header"><span class="step-index">新しい調査を始める</span><span class="muted mini">まずはアイデアを入力</span></div>
       <div class="query-body">
         <label for="idea">何を作りたい？ <span class="required">*</span></label>
-        <textarea id="idea" maxlength="350" rows="2" placeholder="例：読書記録・蔵書管理アプリを作りたい。バーコード登録と中古本比較で差別化したい。">広告なし動画投稿サイト</textarea>
+        <textarea id="idea" maxlength="350" rows="2" placeholder="作りたいサービスやアプリのアイデアを入力"></textarea>
         <div class="query-grid">
-          <div><label for="term">検索キーワード <span class="hint-tag">主に日本語</span></label><input id="term" placeholder="例：読書記録 本棚" value="動画投稿"></div>
-          <div><label for="term-en">英語キーワード <span class="hint-tag">GitHub / HN用</span></label><input id="term-en" placeholder="例：book tracker" value="video sharing"></div>
-          <div><label for="target">想定する利用者</label><input id="target" placeholder="例：年間50冊以上読む人" value="日本の個人クリエイターと作品視聴者"></div>
+          <div><label for="term">検索キーワード <span class="hint-tag">主に日本語</span></label><input id="term" placeholder="調べたいキーワード" ></div>
+          <div><label for="term-en">英語キーワード <span class="hint-tag">GitHub / HN用</span></label><input id="term-en" placeholder="必要なら英語の検索語" ></div>
+          <div><label for="target">想定する利用者</label><input id="target" placeholder="想定ユーザー（任意）" ></div>
           <div><label for="region">App Store対象地域</label><select id="region"><option value="jp">日本 (JPY)</option><option value="us">米国 (USD)</option><option value="gb">英国 (GBP)</option></select></div>
         </div>
         <div class="action-row"><button id="research" class="btn primary"><span class="btn-icon">⌕</span> 公開データを調査する</button><button id="example" class="btn secondary">使い方を見る</button><div class="muted mini" id="research-note">接続先：App Store / GitHub / Hacker News</div></div>
@@ -120,14 +120,14 @@
     <section id="view-report" class="view" aria-label="開発企画書">
       <div class="section-head"><div><div class="eyebrow">05 / PRODUCT DEFINITION</div><h2>開発企画書・仕様書</h2></div><div class="flex-inline"><button class="small-btn" id="copy-report">⧉ コピー</button><button class="small-btn highlight" id="download-report">↓ Markdown</button></div></div>
       <div class="inline-note">実測されたデータと推論・要確認事項を分離したMarkdownを生成する。Codexに渡す際の初期仕様にも使える。</div>
-      <div class="report-layout"><div class="report-side"><h3>企画の定義</h3><label for="product-name">プロダクト名</label><input id="product-name" value="広告なし動画投稿サイト" placeholder="仮の名称"><label for="problem">解決したい問題</label><textarea id="problem" rows="4" placeholder="どんな困りごとを解決するか"></textarea><label for="platform">最初の提供先</label><select id="platform"><option>Web / スマホ・PC共通</option><option>Windowsデスクトップ</option><option>iOSアプリ</option><option>VST3プラグイン</option><option>ゲーム</option></select><label for="pricing">価格の仮説</label><input id="pricing" placeholder="例：無料＋買い切り¥980"><button class="btn primary full" id="refresh-report">仕様書を再生成</button></div><div class="report-main"><pre id="report-preview">調査データを取得すると、ここに開発仕様書を生成するよ。</pre></div></div>
+      <div class="report-layout"><div class="report-side"><h3>企画の定義</h3><label for="product-name">プロダクト名</label><input id="product-name" placeholder="仮の名称"><label for="problem">解決したい問題</label><textarea id="problem" rows="4" placeholder="どんな困りごとを解決するか"></textarea><label for="platform">最初の提供先</label><select id="platform"><option>Web / スマホ・PC共通</option><option>Windowsデスクトップ</option><option>iOSアプリ</option><option>VST3プラグイン</option><option>ゲーム</option></select><label for="pricing">価格の仮説</label><input id="pricing" placeholder="例：無料＋買い切り¥980"><button class="btn primary full" id="refresh-report">仕様書を再生成</button></div><div class="report-main"><pre id="report-preview">調査データを取得すると、ここに開発仕様書を生成するよ。</pre></div></div>
     </section>
     <section id="view-handoff" class="view" aria-label="Codex引き継ぎ">
       <div class="section-head"><div><div class="eyebrow">09 / DEVELOPMENT HANDOFF</div><h2>Codexへ開発を引き継ぐ</h2></div><span class="chip">承認して実行</span></div>
       <div class="inline-note emphasis"><strong>現在は手動引き継ぎ。</strong> ここで作るファイルは仕様と調査データを整理するもので、CodexやWorkを勝手に起動したり、利用枠を消費したりしない。クラウドで自動実行するにはGitHub接続と追加の認証・実行基盤が必要。</div>
       <div class="two-panels">
        <article class="panel"><h3>引き継ぐ作業</h3><div class="editable-stack">
-         <label>Codexに依頼するタスク</label><textarea id="handoff-task" rows="6" placeholder="P0機能を実装し、テストを追加。修正したファイルと結果を報告して。">P0機能の動く試作を実装し、テスト結果と未検証の問題を報告する。</textarea>
+         <label>Codexに依頼するタスク</label><textarea id="handoff-task" rows="6" placeholder="P0機能を実装し、テストを追加。修正したファイルと結果を報告して。"></textarea>
          <label>開発用GitHubリポジトリ（任意）</label><input id="handoff-repo" type="url" placeholder="https://github.com/ユーザー/リポジトリ">
          <button class="btn primary full" id="handoff-zip">↓ Codex引き継ぎZIPを生成</button>
          <button class="btn secondary full" id="handoff-copy">⧉ Codex向け指示をコピー</button>

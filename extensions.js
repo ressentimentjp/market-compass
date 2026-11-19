@@ -32,7 +32,7 @@ async function initializeWorkspace(){
   st.evidence??=[];
   st.marketPersona??='';st.marketDemand??='';
   st.unitEconomics??={users:1000,rate:5,fee:490,commission:3.6,variable:35,fixed:10000};
-  st.handoffTask??='P0機能の動く試作を実装し、テスト結果と未検証の問題を報告する。';
+  st.handoffTask??='';
   st.handoffRepo??='';
   workspaceLoaded=true;
   updateProjectPicker();
@@ -44,7 +44,7 @@ function swapState(data){
     apps:[],repos:[],voices:[],sources:{},features:[],productName:'',problem:'',
     platform:'Web / スマホ・PC共通',pricing:'',evidence:[],marketPersona:'',marketDemand:'',
     unitEconomics:{users:1000,rate:5,fee:490,commission:3.6,variable:35,fixed:10000},
-    handoffTask:'P0機能の動く試作を実装し、テスト結果と未検証の問題を報告する。',handoffRepo:''
+    handoffTask:'',handoffRepo:''
   },data);
   if(!Array.isArray(st.evidence))st.evidence=[];
 }
@@ -93,7 +93,7 @@ async function changeProject(id){
   if(!st.timestamp)toast('プロジェクトを切り替えたよ。調査はまだ実行されていない。');else toast('保存済みのプロジェクトを表示している。情報は取得日時時点のものだよ。');
   saveWorkspace();
 }
-const emptyProject=name=>({version:1,idea:name,term:'',termEn:'',target:'',region:'jp',timestamp:null,apps:[],repos:[],voices:[],sources:{},features:[],productName:name,problem:'',platform:'Web / スマホ・PC共通',pricing:'',evidence:[],marketPersona:'',marketDemand:'',unitEconomics:{users:1000,rate:5,fee:490,commission:3.6,variable:35,fixed:10000},handoffTask:'P0機能の動く試作を実装し、テスト結果と未検証の問題を報告する。',handoffRepo:''});
+const emptyProject=name=>({version:1,idea:name,term:'',termEn:'',target:'',region:'jp',timestamp:null,apps:[],repos:[],voices:[],sources:{},features:[],productName:name,problem:'',platform:'Web / スマホ・PC共通',pricing:'',evidence:[],marketPersona:'',marketDemand:'',unitEconomics:{users:1000,rate:5,fee:490,commission:3.6,variable:35,fixed:10000},handoffTask:'',handoffRepo:''});
 async function addProject(duplicate=false){
   if(running)return;
   const title=prompt(duplicate?'複製プロジェクト名':'新しいプロジェクト名',duplicate?(st.productName||st.idea||'プロジェクト')+' のコピー':'新しい企画');
